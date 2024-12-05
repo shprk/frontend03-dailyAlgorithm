@@ -29,3 +29,13 @@ function evenOrOdd(number) {
       }
     }
   }
+
+  // 2024.12.05. - 1년부터 100년까지가 1세기일 때, year에 따라 몇세기인지 출력하라
+
+  function century(year) {
+    for (let i = 0; i < 1000; i++) {
+      if (i < year && year <= i*100) {
+        return i;
+      }
+    }
+   }
