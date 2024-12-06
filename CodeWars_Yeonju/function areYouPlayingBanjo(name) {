@@ -1,0 +1,8 @@
+function areYouPlayingBanjo(name) {
+  // Implement me
+  if (name.startsWith("R") || name.startsWith("r")) { // 조건부가 성립이 안될때는 직접적으로 읽어보기
+    return `${name} plays banjo` 
+  } else {
+    return `${name} does not play banjo` // 문자열과 파라미터를 묶어줄때는 백팁 사용 명심
+  }
+}
