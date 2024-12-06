@@ -30,12 +30,36 @@ function evenOrOdd(number) {
     }
   }
 
-  // 2024.12.05. - 1년부터 100년까지가 1세기일 때, year에 따라 몇세기인지 출력하라
+  // 2024.12.05. - 1년부터 100년까지가 1세기일 때, year에 따라 몇세기인지 출력하라(1시간 넘게 걸림..)
 
   function century(year) {
-    for (let i = 0; i < 1000; i++) {
-      if (i < year && year <= i*100) {
+    for (let i = 1; i < 1000; i++) {
+      if (i <= year && year <= i*100) {
         return i;
       }
     }
    }
+
+   // 2024.12.06. - 배열에서 양의 정수만 골라내서 배열로 반환하라
+
+   function filter_list(l) {
+    const arr = [];
+    for (let i = 0; i < l.length; i++) {
+      if((l[i] >= 0) && (typeof(l[i])) === "number") {
+        arr.push(l[i]);
+      }
+    }
+    return arr;
+  }
+
+  // Number of People in the Bus(문제 제목)
+
+  var number = function(busStops) {
+    let input = 0;
+    let output = 0;
+    for (let i = 0; i < busStops.length; i++) {
+      input = input + busStops[i][0];
+      output = output + busStops[i][1];
+    }
+    return input - output;
+  }
