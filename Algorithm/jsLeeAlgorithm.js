@@ -63,3 +63,64 @@ function evenOrOdd(number) {
     }
     return input - output;
   }
+
+  // 2024.12.07.
+
+  function findNeedle(haystack) {
+    for (let i = 0; i <haystack.length; i++) {
+      if(haystack[i] === "needle") {
+        return `found the needle at position ${i}`;
+      } else {
+         "Nothing";
+      }
+    }
+  }
+
+  // 문자열의 모음을 모두 제외하라
+  function disemvowel(str) {
+    let a = "a";
+    let A = "A";
+    let o = "o";
+    let O = "O";
+    let u = "u";
+    let U = "U";
+    let i = "i";
+    let I = "I";
+    let e = "e";
+    let E = "E";
+    let arr = Array.from(str);
+    for (let j = 0; j < arr.length; j++) {
+      if(arr[j] === a) {
+        delete arr[j];
+      }
+       if(arr[j] === A) {
+        delete arr[j];
+      }
+       if(arr[j] === o) {
+        delete arr[j];
+      }
+       if(arr[j] === O) {
+        delete arr[j];
+      }
+       if(arr[j] === e) {
+        delete arr[j];
+      }
+       if(arr[j] === E) {
+        delete arr[j];
+      }
+       if(arr[j] === i) {
+        delete arr[j];
+      }
+       if(arr[j] === I) {
+        delete arr[j];
+      }
+       if(arr[j] === u) {
+        delete arr[j];
+      }
+       if(arr[j] === U) {
+        delete arr[j];
+      }
+    }
+    let strr = arr.join('')
+    return strr;
+  }
