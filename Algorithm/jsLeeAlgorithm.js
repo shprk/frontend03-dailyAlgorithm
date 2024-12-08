@@ -124,3 +124,21 @@ function evenOrOdd(number) {
     let strr = arr.join('')
     return strr;
   }
+
+  // 2024.12.08. - 양수의 갯수와 음수의 합이 담긴 배열을 출력하라
+
+  function countPositivesSumNegatives(input) {
+    let numCount = 0;
+    let numSum = 0;
+
+    for (let i = 0; i < input.length; i++) {
+      if (input[i] > 0) {
+        numCount += 1;
+      } else if (input[i] <= 0) {
+        numSum = numSum + input[i];
+      } else {
+        return [];
+      }
+    }
+    return [numCount, numSum];
+  }
