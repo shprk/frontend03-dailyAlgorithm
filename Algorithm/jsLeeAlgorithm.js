@@ -128,6 +128,10 @@ function evenOrOdd(number) {
   // 2024.12.08. - 양수의 갯수와 음수의 합이 담긴 배열을 출력하라
 
   function countPositivesSumNegatives(input) {
+    if (input == null || input.length == 0) {  //input이 null 또는 빈배열일 때 빈 배열을 반환하라 추가함
+      return [];
+    }
+
     let numCount = 0;
     let numSum = 0;
 
@@ -142,3 +146,36 @@ function evenOrOdd(number) {
     }
     return [numCount, numSum];
   }
+
+    // 2024.12.09. - 제곱의 합
+
+    function squareSum(numbers){
+      let sum = 0;
+      if(numbers.length === 0) {
+        return 0;
+      }
+     for (let i = 0; i < numbers.length; i++) {
+       sum = sum + numbers[i]*numbers[i];
+     }
+      return sum;
+    }
+
+    // 주어진 문자열 중 모음의 개수
+
+    function getCount(str) {
+      let result = 0;
+      for (const element of str) {
+        if (element === 'a') {
+          result++;
+        } else if (element === 'u') {
+          result++;
+        } else if (element === 'e') {
+          result++;
+        } else if (element === 'i') {
+          result++;
+        } else if (element === 'o') {
+          result++;
+        }
+      }
+      return result;
+    }
