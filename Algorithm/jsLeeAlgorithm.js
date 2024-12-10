@@ -179,3 +179,40 @@ function evenOrOdd(number) {
       }
       return result;
     }
+
+    // 2024.12.10. - 제곱의 나열
+
+    function squareDigits(num){
+      let str = String(num);
+      const arr = Array.from(str);
+      const newArr = [];
+        arr.forEach(element => {
+          let multi = element*element;
+          newArr.push(multi);
+        })
+      let newStr = newArr.join("");
+      return Number(newStr);
+    }
+
+    // 문자열로 주어진 numbers의 최대값, 최소값을 구하라
+
+    function highAndLow(numbers){
+      let str = numbers.replaceAll(' ', ',');
+      const arr = str.split(',');
+      const numArr = [];
+      for (let i = 0; i < arr.length; i++) {
+        let num = Number(arr[i]);
+        numArr.push(num);
+      }
+      
+      let max = numArr[0];
+      let min = numArr[0];
+      for (let j = 1; j < numArr.length; j++) {
+        if (numArr[j] >= max) {
+          max = numArr[j];
+        } else if (numArr[j] < min) {
+          min = numArr[j];
+        }
+      }
+      return `${max} ${min}`
+    }
