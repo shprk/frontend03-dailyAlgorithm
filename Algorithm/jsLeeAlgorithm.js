@@ -216,3 +216,46 @@ function evenOrOdd(number) {
       }
       return `${max} ${min}`
     }
+
+    // 2024.12.11. 내림차순
+
+    function descendingOrder(n){
+      const str = String(n);
+      const arr = Array.from(str);
+      const newArr = [];
+      const array = arr.map(el => Number(el))
+
+      loof(array);
+      function loof (array) {
+        if (array.length !== 0) {
+          let max = array[0];
+          array.forEach(element => {
+          if (element >= max) {
+            max = element;
+          }})
+          newArr.push(max);
+          const loofarr = array.filter(others => others < max); //요소에 중복인 경우를 해결못함(무한으로 재귀됨)
+          loof(loofarr);
+        } else if (array.length === 0) {
+          return;
+        }
+      }
+      return Number(newArr.join(''));
+    }
+
+    //버블정렬 사용(수보님이 알려줘서 좀 찾아보고 작성한 코드임
+
+    function descendingOrder(n){
+      const str = String(n);
+      const arr = Array.from(str);
+      const array = arr.map(el => Number(el))
+
+      for (let i = 0; i < array.length; i++) {
+        for(let j = 0; j < array.length; j++) {
+          if(array[j] < array[j + 1]) {
+            [array[j], array[j + 1]] = [array[j + 1], array[j]];
+          }
+        }
+      }
+      return Number(array.join(''));
+    }
