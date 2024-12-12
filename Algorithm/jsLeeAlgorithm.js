@@ -259,3 +259,49 @@ function evenOrOdd(number) {
       }
       return Number(array.join(''));
     }
+
+    // 2024.12.12. 홀/짝일 때 구분하여 조건에 맞는 문자열 추출
+
+    function getMiddle(s) {
+      const arr = Array.from(s);
+      for(let i = 0; i < arr.length; i++) {
+        if (arr.length % 2 === 0) {
+          return arr[(arr.length/2)-1] + arr[arr.length/2];
+        } else if (arr.length % 2 === 1) {
+          return arr[Math.floor(arr.length/2)];
+        }
+      }
+    }
+
+    // 제곱근 찾기
+
+    var isSquare = function(n){
+      if(n < 0) {
+        return false;
+      }
+
+      let num = 0;
+      for(let i = 0 ; i <= n; i++) { //큰 숫자가 들어가면 for문이라 작업시간이 길어지는 코드임
+        if (i*i === n) {
+          num = i;
+        }
+      }
+      if(num*num === n) {
+        return true
+      } else {
+        return false
+      }
+    }
+
+    var isSquare = function(n){ // 메소드를 활용해서도 풀어봄
+      if (n < 0) {
+        return false;
+      }
+      
+      let a = Math.sqrt(n);
+      if ((a % 1 === 0) && (a*a === n)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
