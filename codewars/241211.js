@@ -25,35 +25,53 @@
 // 무한대로 배열을 돌려야하니... 무한대 while(true)를 성립시켜서 돌리자!!!
 
 function noBoringZeros(n) {
-  const changeString = String(n);
+  //const changeString = String(n);
   // 숫자를 문자열로 변경 :숫자를 바로 배열로 변경 시 통으로 변경되어서 인덱스 1개 됨.
-  const newArry = Array.from(changeString);
   // 문자열을 배열로 전환
 
-  let loopArry = true;
-  //무한루프 시작
-    outer: while(loopArry){
-      if(newArry[newArry.lenght -1] === '0'){
-        console.log('dd');
-        newArry[newArry.lenght -1].pop();
-      }else if(newArry[newArry.lenght -1] !== '0'){
-        console.log(newArry) 
-        return newArry; 
-      }break outer;
+  // 어라 생각해보니 while문은 내가 가진 배열을 
+  // 하나하나 꺼내주는게 아님..그래서 console.log에 
+  // [object Array] (3)
+  // ["1","0","0"] 가 찍힘...........................
+
+  // 때문에 for의 반복문으로 나를 하나하나 돌려주어야함..
+  // 배열을 뒤집어서 하나하나씩 돌리는데 
+  // 0이 아니면 멈추고 
+  // 다시 배열을 뒤집어서 숫자열로 변환!!!!!
+  const changeString = String(n);
+  const newArray = Array.from(changeString);
+  let reverseArray = newArray.reverse();
+  
+  for(let i= 0; i<=reverseArray.length; i++) {
+    if(reverseArray[i] !== "0") {
+      console.log(i);
+      const cutArray = reverseArray.slice(i); 
+      const againReverse = cutArray.reverse();
+      const reChangeString =  String(againReverse);
+      const deleteArray = reChangeString.replace(/,/g, '')
+      const end2 = Number(deleteArray);
+      console.log(end2);
+
+      return end2;
     }
-    let reChangeNumber = newArry.map(Number);
-    return console.log(reChangeNumber);
+  }
+
 }
 noBoringZeros(100);
 
-// 어라 생각해보니 while문은 내가 가진 배열을 
-// 하나하나 꺼내주는게 아님..그래서 console.log에 
-// [object Array] (3)
-// ["1","0","0"] 가 찍힘...........................
+// function noBoringZeros(n) {
+//   return Number(String(n).replace(/0+$/,''));
+// }
 
-// 때문에 for의 반복문으로 나를 하나하나 돌려주어야함..
-// 배열을 뒤집어서 하나하나씩 돌리는데 
-// 0이 아니면 멈추고 
-// 다시 배열을 뒤집어서 숫자열로 변환!!!!!
-
+// function noBoringZeros(x) {
+//   let a = `${x}`.split('');
+//   for(let i = a.length -1; i >= 0; i--){
+//     if (a[i] == 0){
+//         a.pop()
+//     }else{
+//         break
+//     }
+//   }
+// return Number(a.join(''))
+// }
 
