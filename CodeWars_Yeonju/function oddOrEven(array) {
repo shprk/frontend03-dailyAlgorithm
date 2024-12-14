@@ -1,0 +1,11 @@
+function oddOrEven(array) {
+  let num = 0;
+  for ( let i = 0; i < array.length; i++) {
+    num+=array[i] // 누적되는 식을 잘 이해하기 
+  }
+  if (num % 2 === 0) { // 2로 나누어진게 짝수 나머지의 값이 딱 맞아 떨어지면 짝수 
+    return "even"
+  } else if (num % 2 !== 0) { // 2로 나누어떨어지지 않으면 홀수 나머지의 값이 생기면 홀수
+    return "odd"
+  } 
+}
