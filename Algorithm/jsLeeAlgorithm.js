@@ -305,3 +305,56 @@ function evenOrOdd(number) {
         return false;
       }
     }
+
+    // 2024.12.14 - 2048게임(3시간 걸림)
+
+    function merge(line) {
+      const result = [];
+      let sum = 0;
+      const newLine = [];
+
+       line.forEach(el => {
+        if(el !== 0) {
+          newLine.push(el);
+        }
+      })
+
+      for (let z = 1; z = (line.length - newLine.length); z++) {
+        newLine.push(0);
+      }
+
+      for (let i = 0; i < newLine.length; i++) {
+          if (newLine[i] === newLine[i+1]) {
+            sum = newLine[i] + newLine[i+1];
+            newLine[i] = sum;
+            newLine[i+1] = 0;
+            }
+        }
+
+      newLine.forEach(ele => {
+        if(ele !== 0) {
+          result.push(ele);
+        }
+      })
+      for (let z = 1; z = (newLine.length - result.length); z++) {
+        result.push(0);
+      }
+      return result;
+    };
+
+    // 2024.12.15. 주어진 범위 내 3,5의 배수의 합 구하기
+    function solution(number){
+      const arr = [];
+      let sum = 0;
+
+      for (let i = 0; i < number; i++) {
+        if ((i % 3 === 0) || (i % 5 === 0)) {
+          arr.push(i);
+        }
+      }
+
+      arr.forEach(ele => {
+        sum = sum + ele;
+      })
+      return sum;
+    }
