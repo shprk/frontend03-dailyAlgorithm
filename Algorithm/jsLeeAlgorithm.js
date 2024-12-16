@@ -358,3 +358,21 @@ function evenOrOdd(number) {
       })
       return sum;
     }
+
+    //2024.12.16 - Looking for a benefactor
+
+    function newAvg(arr, newavg) {
+    let sum = 0;
+
+    arr.forEach(ele => {
+      sum = sum + ele;
+    })
+
+    let result = newavg*(arr.length+1) - sum;
+
+    if (result <= 0) {
+      throw new Error('Expected New Average is too low');
+    } else {
+      return Math.ceil(result);
+    }
+  }
