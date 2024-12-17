@@ -376,3 +376,38 @@ function evenOrOdd(number) {
       return Math.ceil(result);
     }
   }
+
+  //2024.12.17. - Return substring instance count
+
+  function solution(fullText, searchText){
+    const fullArr = Array.from(fullText);
+    const searchArr = Array.from(searchText);
+    const newArr = [];
+
+    for (let i = 0; i < fullArr.length; i++) {
+      let j = 0;
+      if (fullArr[i] === searchArr[j]) {
+        newArr.push(fullArr[i]);
+        j++
+      }
+    }
+    return newArr.length/searchText.length;
+  }
+
+  // Responsible Drinking
+
+  function hydrate(s) {
+    const arr = Array.from(s)
+    let sum = 0;
+    arr.forEach(ele => {
+      if(isNaN(ele) === false) {
+        let num = Number(ele);
+      sum = sum + num;
+    }
+    })
+    if (sum === 1) {
+    return `${sum} glass of water`;
+    } else {
+      return `${sum} glasses of water`
+    }
+  }
