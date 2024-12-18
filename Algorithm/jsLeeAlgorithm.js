@@ -411,3 +411,20 @@ function evenOrOdd(number) {
       return `${sum} glasses of water`
     }
   }
+
+  //2024.12.18. - String ends with?
+
+  function solution(str, ending){
+    let num = str.length - ending.length;
+    const arr = [];
+
+    for (let i = num; i < str.length; i++) {
+      arr.push(str[i]);
+    }
+
+    if (arr.join('') === ending) {
+      return true
+    } else {
+      return false;
+    }
+  }
