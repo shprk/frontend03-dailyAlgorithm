@@ -428,3 +428,24 @@ function evenOrOdd(number) {
       return false;
     }
   }
+
+  //2024.12.19. - Stop gninnipS My sdroW! - 조건걸때 두루뭉술하게 생각하지 말고 정확하게 생각하고 적자
+
+  function spinWords(string) {
+    const arr = string.split(" ");
+    let newStr = ""
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length <= 4) {
+        newStr = newStr + arr[i] + " ";
+      } else if (arr[i].length >= 5) {
+        const newArr = Array.from(arr[i]);
+        const newArr2 = [];
+        for (let j = newArr.length - 1; j >= 0; --j) {
+          newArr2.push(newArr[j])
+        }
+        const reverse = newArr2.join('');
+        newStr = newStr + reverse + " ";
+        }
+    }
+      return newStr.trim();
+  }
