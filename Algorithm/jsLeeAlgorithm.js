@@ -449,3 +449,44 @@ function evenOrOdd(number) {
     }
       return newStr.trim();
   }
+
+  //2024.12.20. - Array.diff
+
+  function arrayDiff(a, b) {
+    const newArr = [];
+    if (a.length === 0) {
+      return newArr;
+    } else if (b.length === 0) {
+      return a;
+    }
+
+    for (let i = 0; i < a.length; i++) {
+      for (let j = 0; j < b.length; j++) {
+        if (a[i] === b[j]) {
+            a[i] = "";
+        }
+      }
+    }
+
+    a.forEach(ele => {
+      if (ele !== "") {
+        newArr.push(ele)
+      }
+    })
+    return newArr;
+  }
+
+  //Moving Zeros To The End
+
+  function moveZeros(arr) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      if( arr[i] !== 0) {
+        newArr.push(arr[i])
+      }
+    }
+    for (let j = 0; j = arr.length - newArr.length; j++) {
+      newArr.push(0)
+    }
+    return newArr;
+  }
