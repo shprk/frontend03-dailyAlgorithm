@@ -25,7 +25,9 @@ function cleanString(s) {
 }
 
 /**
- * 해당 문제 리팩터링 map과 pop, push 사용
+ * 위 문제 리팩터링 map과 pop, push 사용
+ * map으로 반복을 돌리며 #이면 뒤에서 하나 빼주고
+ * 아니면 값을 푸시 후 합친다.
  */
 function cleanString(s) {
   const resultArray = [];
